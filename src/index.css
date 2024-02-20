@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap");
+body {
+    font-family: "Literata", serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    background-image: linear-gradient(to bottom, #000000, #1c2b41);
+    color: #f8f8f8;
+}
+
+a {
+    text-decoration: none;
+    color: #f8f8f8;
+}
+
+#logo-image {
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+}
