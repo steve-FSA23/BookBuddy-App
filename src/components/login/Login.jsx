@@ -1,9 +1,11 @@
 /* TODO - add your code to create a functional React component that renders a login form */
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setToken }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -28,10 +30,12 @@ const Login = ({ setToken }) => {
         } catch (error) {
             console.error(error);
         }
-
         //Reset the form fields after submission
         setEmail("");
         setPassword("");
+
+        // Redirect user to the homePage
+        navigate("/");
     };
 
     return (
