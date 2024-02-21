@@ -12,7 +12,7 @@ const Navigations = () => {
                 </h3>
             </Link>
             <ul>
-                <Link to="">
+                <Link to="/account">
                     <li>Account</li>
                 </Link>
                 <Link to="/">
@@ -24,7 +24,7 @@ const Navigations = () => {
                 <Link to="/login">
                     <button>Login</button>
                 </Link>
-                <Link to="/signup">
+                <Link to="/register">
                     <button>Register</button>
                 </Link>
             </div>

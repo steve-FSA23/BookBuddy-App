@@ -1,14 +1,15 @@
 /* TODO - add your code to create a functional React component that renders details for a single book. Fetch the book data from the provided API. You may consider conditionally rendering a 'Checkout' button for logged in users. */
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import "./SingleBook.css";
 
-const SingleBook = () => {
+const SingleBook = ({ token }) => {
     const { id } = useParams();
     const [bookData, setBookData] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    const navigate = useNavigate();
     useEffect(() => {
         async function fetchBook() {
             try {
@@ -22,12 +23,35 @@ const SingleBook = () => {
             }
         }
         fetchBook();
-        setIsLoggedIn(true); // Change to false if user is not logged in
-    }, [id]);
+        // Update isLoggedIn based on token
+        setIsLoggedIn(token !== null && token !== undefined);
+    }, [id, token]);
 
-    const handleCheckout = () => {
-        // Logic for checkout
-        console.log("Checkout button clicked");
+    const handleCheckout = async () => {
+        if (!isLoggedIn) {
+            navigate("/login");
+            return;
+        }
+        try {
+            const response = await fetch(
+                `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${id}`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`, // Include token for authentication
+                    },
+                    body: JSON.stringify({ bookId: id, available: false }),
+                }
+            );
+            if (response.ok) {
+                alert("Book checked out successfully!");
+            } else {
+                alert("Checkout failed");
+            }
+        } catch (error) {
+            console.error("Error during checkout:", error);
+        }
     };
 
     return (
