@@ -57,13 +57,19 @@ const SingleBook = ({ token }) => {
     return (
         <div className="single_book_container">
             {bookData ? (
-                <div>
+                <div className="single_book">
                     <img src={bookData.coverimage} alt={bookData.title} />
                     <h2>{bookData.title}</h2>
-                    <p>Author: {bookData.author}</p>
+                    <p className="book_author">
+                        <b>Author: </b> {bookData.author}
+                    </p>
 
-                    <p>Description: {bookData.description}</p>
-                    <p>Ratings: ⭐️⭐️⭐️⭐️ 4.5 (500)</p>
+                    <p className="book_description">
+                        <b>Description: </b> {bookData.description}
+                    </p>
+                    <p className="book_ratings">
+                        <b>Ratings: </b> ⭐️⭐️⭐️⭐️ 4.5 (500)
+                    </p>
                     {isLoggedIn && (
                         <button onClick={handleCheckout}>Checkout</button>
                     )}

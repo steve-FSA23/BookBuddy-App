@@ -1,8 +1,8 @@
 .book_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    padding: 6rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4rem;
+    padding: 8rem;
     align-items: center;
     height: 62vh;
     overflow: scroll;
@@ -25,10 +25,31 @@
 }
 
 .single_book_container p {
-    font-size: 0.8rem;
+    font-size: 0.9em;
+    font-weight: 600;
     letter-spacing: 1px;
+    margin-bottom: 2rem;
 }
 
-.single_book_container h2 {
-    margin-top: 2.8rem;
+.single_book_container h3 {
+    margin-top: 1.4rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.book_btn {
+    width: 150px;
+    height: 2.2rem;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #314adb;
+    color: #fafafa;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+
+.book_btn:hover {
+    transform: scale(1.05);
+    filter: brightness(110%);
 }

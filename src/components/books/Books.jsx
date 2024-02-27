@@ -36,7 +36,7 @@ const Books = () => {
                     <h3>{book.title}</h3>
                     <p>By: {book.author}</p>
                     <Link to={`/books/${book.id}`}>
-                        <button>View Book</button>
+                        <button className="book_btn">View Book</button>
                     </Link>
                 </div>
             ))}

@@ -2,16 +2,21 @@
 import "./Navigations.css";
 import { Link } from "react-router-dom";
 import bookLogo from "../../assets/books.png";
-const Navigations = () => {
+const Navigations = ({ token, setToken }) => {
+    const handleSignOut = () => {
+        setToken(null);
+        alert("Signing out...");
+    };
+
     return (
-        <nav>
-            <Link to="/">
+        <nav className="navbar">
+            <Link to="/" className="navbar-logo">
                 <h3>
-                    <img id="logo-image" src={bookLogo} />
+                    <img id="logo-image" src={bookLogo} alt="Book Logo" />
                     Library App
                 </h3>
             </Link>
-            <ul>
+            <ul className="navbar-links">
                 <Link to="/account">
                     <li>Account</li>
                 </Link>
@@ -20,13 +25,19 @@ const Navigations = () => {
                 </Link>
             </ul>
 
-            <div className="profile_container">
-                <Link to="/login">
-                    <button>Login</button>
-                </Link>
-                <Link to="/register">
-                    <button>Register</button>
-                </Link>
+            <div className="navbar-btn">
+                {token ? (
+                    <button onClick={handleSignOut}>Sign Out</button>
+                ) : (
+                    <>
+                        <Link to="/login" className="navbar-link">
+                            <button>Login</button>
+                        </Link>
+                        <Link to="/register" className="navbar-link">
+                            <button>Register</button>
+                        </Link>
+                    </>
+                )}
             </div>
         </nav>
     );

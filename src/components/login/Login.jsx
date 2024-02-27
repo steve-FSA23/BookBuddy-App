@@ -1,7 +1,7 @@
 /* TODO - add your code to create a functional React component that renders a login form */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./Login.css";
 const Login = ({ setToken }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -39,10 +39,10 @@ const Login = ({ setToken }) => {
     };
 
     return (
-        <div>
+        <div className="login-form-container">
             <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form className="login-form" onSubmit={handleSubmit}>
+                <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -52,7 +52,7 @@ const Login = ({ setToken }) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"

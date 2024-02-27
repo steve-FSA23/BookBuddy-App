@@ -1,0 +1,20 @@
+.single_book {
+    width: 100%;
+    padding: 4rem;
+}
+
+.single_book img {
+    width: 190px;
+    height: 280px;
+    border: 3px solid rgb(182, 182, 182);
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.single_book p {
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    font-weight: 200;
+    font-size: 16px;
+}

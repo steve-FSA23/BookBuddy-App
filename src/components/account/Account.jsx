@@ -1,5 +1,5 @@
 /* TODO - add your code to create a functional React component that renders account details for a logged in user. Fetch the account data from the provided API. You may consider conditionally rendering a message for other users that prompts them to log in or create an account.  */
-
+import "./Account.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 const Account = ({ token }) => {
@@ -69,9 +69,9 @@ const Account = ({ token }) => {
             alert(error.message);
         }
     };
-    console.log("Line 68", userData);
+
     return (
-        <div>
+        <div className="account-details-container">
             {userData ? (
                 <div>
                     <h2>Account Details</h2>
@@ -87,7 +87,7 @@ const Account = ({ token }) => {
                                     <button
                                         onClick={() => handleDelete(book.id)}
                                     >
-                                        Delete
+                                        Return
                                     </button>
                                 </>
                             ))}
@@ -102,7 +102,7 @@ const Account = ({ token }) => {
                         Please log in or create an account to view account
                         details.
                     </h4>
-                    <div>
+                    <div className="account-buttons">
                         <Link to="/login">
                             <button>Login</button>
                         </Link>

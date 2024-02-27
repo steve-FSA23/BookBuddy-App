@@ -1,3 +1,5 @@
+import "./Register.css";
+
 /* TODO - add your code to create a functional React component that renders a registration form */
 import { useState } from "react";
 const Register = ({ setToken }) => {
@@ -39,10 +41,10 @@ const Register = ({ setToken }) => {
         setPassword("");
     };
     return (
-        <div>
+        <div className="register-form-container">
             <h2>Register</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form className="register-form" onSubmit={handleSubmit}>
+                <div className="form-group">
                     <label htmlFor="firstname">First Name:</label>
                     <input
                         type="text"
@@ -52,7 +54,7 @@ const Register = ({ setToken }) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="lastname">Last Name:</label>
                     <input
                         type="text"
@@ -62,7 +64,7 @@ const Register = ({ setToken }) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -72,7 +74,7 @@ const Register = ({ setToken }) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
