@@ -78,7 +78,7 @@ const Account = ({ token }) => {
                     <p>Name: {userData.firstname}</p>
                     <p>Last Name: {userData.lastname}</p>
                     <p>Email: {userData.email}</p>
-                    <h3>Books Checked Out:</h3>
+                    <h3>Books Checked Out: {userData.books.length}</h3>
                     {userData.books.length > 0 ? (
                         <ul>
                             {userData.books.map((book) => (

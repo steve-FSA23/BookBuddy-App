@@ -28,6 +28,8 @@
 .account-details-container ul {
     list-style-type: none;
     padding: 0;
+    height: 34vh;
+    overflow: scroll;
 }
 
 .account-details-container li {
