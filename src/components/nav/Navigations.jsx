@@ -34,7 +34,7 @@ const Navigations = ({ token, setToken }) => {
                             <button>Login</button>
                         </Link>
                         <Link to="/register" className="navbar-link">
-                            <button>Register</button>
+                            <button className="register_btn">Register</button>
                         </Link>
                     </>
                 )}

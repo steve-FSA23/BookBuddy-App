@@ -1,10 +1,10 @@
 .book_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 4rem;
-    padding: 8rem;
+    gap: 2rem;
+    padding: 5rem;
     align-items: center;
-    height: 62vh;
+    height: 85vh;
     overflow: scroll;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .book_img {
-    width: 190px;
+    width: 180px;
     height: 280px;
     border: 3px solid rgb(182, 182, 182);
     object-fit: fill;
@@ -38,18 +38,33 @@
 }
 
 .book_btn {
-    width: 150px;
-    height: 2.2rem;
     font-size: 16px;
     border-radius: 5px;
     border: none;
     background-color: #314adb;
     color: #fafafa;
     transition: all ease 0.4s;
-    cursor: pointer;
+    padding: 10px 20px;
 }
 
 .book_btn:hover {
     transform: scale(1.05);
     filter: brightness(110%);
+}
+
+@media screen and (max-width: 600px) {
+    .book_container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        width: 100%;
+        padding: 1.2rem;
+        height: 90vh;
+    }
+    .book_img {
+        width: 95px;
+        height: 140px;
+    }
+    .single_book_container h3 {
+        font-size: 1rem;
+    }
 }

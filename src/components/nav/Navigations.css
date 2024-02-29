@@ -2,17 +2,15 @@
     background-color: #1c1c1c;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px 60px;
+    padding: 10px 0;
+    width: 102%;
 }
 
 .navbar-logo {
     text-decoration: none;
     color: #fff;
-}
-
-.navbar-logo h3 {
     display: flex;
     align-items: center;
 }
@@ -22,9 +20,14 @@
     margin-right: 10px;
 }
 
+.navbar-logo h3 {
+    font-size: 18px;
+}
+
 .navbar-links {
     list-style-type: none;
     display: flex;
+    margin: 0;
 }
 
 .navbar-links li {
@@ -53,6 +56,34 @@
     cursor: pointer;
 }
 
+.navbar-link .register_btn {
+    background-color: #1d1d1d;
+    color: #e9e9e9;
+}
+
 .navbar-btn button:hover {
-    background-color: #3b58ff;
+    background-color: #0020d6;
+}
+
+/* Media Query for Mobile Devices */
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .navbar-links {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-links li {
+        margin: 10px 0;
+    }
+    .navbar-btn {
+        margin-top: 10px;
+    }
+    .navbar-logo h3 {
+        font-size: 16px;
+    }
 }
