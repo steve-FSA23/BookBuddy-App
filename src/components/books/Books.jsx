@@ -27,17 +27,19 @@ const Books = () => {
     return (
         <div className="book_container">
             {bookData.map((book) => (
-                <div key={book.id} className="single_book_container">
+                <div key={book.id} className="book">
                     <img
                         src={book.coverimage}
                         alt={book.title}
                         className="book_img"
                     />
-                    <h3>{book.title}</h3>
-                    <p>By: {book.author}</p>
-                    <Link to={`/books/${book.id}`}>
-                        <button className="book_btn">View Book</button>
-                    </Link>
+                    <div className="title_container">
+                        <h3>{book.title}</h3>
+                        <p>By: {book.author}</p>
+                        <Link to={`/books/${book.id}`}>
+                            <button className="book_btn">View Book</button>
+                        </Link>
+                    </div>
                 </div>
             ))}
         </div>

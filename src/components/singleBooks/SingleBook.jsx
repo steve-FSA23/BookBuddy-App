@@ -1,7 +1,6 @@
 /* TODO - add your code to create a functional React component that renders details for a single book. Fetch the book data from the provided API. You may consider conditionally rendering a 'Checkout' button for logged in users. */
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
 import "./SingleBook.css";
 
 const SingleBook = ({ token }) => {
@@ -59,20 +58,27 @@ const SingleBook = ({ token }) => {
             {bookData ? (
                 <div className="single_book">
                     <img src={bookData.coverimage} alt={bookData.title} />
-                    <h2>{bookData.title}</h2>
-                    <p className="book_author">
-                        <b>Author: </b> {bookData.author}
-                    </p>
+                    <div className="book_info">
+                        <h2>{bookData.title}</h2>
+                        <p className="book_author">
+                            <b>Author: </b> {bookData.author}
+                        </p>
 
-                    <p className="book_description">
-                        <b>Description: </b> {bookData.description}
-                    </p>
-                    <p className="book_ratings">
-                        <b>Ratings: </b> ⭐️⭐️⭐️⭐️ 4.5 (500)
-                    </p>
-                    {isLoggedIn && (
-                        <button onClick={handleCheckout}>Checkout</button>
-                    )}
+                        <p className="book_description">
+                            <b>Description: </b> {bookData.description}
+                        </p>
+                        <p className="book_ratings">
+                            <b>Ratings: </b> ⭐️⭐️⭐️⭐️ 4.5 (500)
+                        </p>
+                        {isLoggedIn && (
+                            <button
+                                onClick={handleCheckout}
+                                className="checkout-btn"
+                            >
+                                Checkout
+                            </button>
+                        )}
+                    </div>
                 </div>
             ) : (
                 <p>Loading...</p>

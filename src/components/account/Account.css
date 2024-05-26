@@ -57,3 +57,9 @@
 .account-buttons button {
     margin-right: 10px;
 }
+
+@media screen and (max-width: 600px) {
+    .account-details-container {
+        width: 90%;
+    }
+}

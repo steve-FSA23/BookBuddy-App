@@ -33,7 +33,7 @@ function App() {
                     element={<Account token={token} setToken={setToken} />}
                 />
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }
